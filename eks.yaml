@@ -18,10 +18,11 @@ Resources:
           - 0.0.0.0/0
   Nodegroup:
     Type: AWS::EKS::Nodegroup
+    DependsOn: Cluster
     Properties:
       ClusterName: ranveerCluster
       NodegroupName: ranveerNodegroup
-      NodeRole: arn:aws:iam::388328004932:role/eks-node-group
+      NodeRole: arn:aws:iam::388328004932:role/EKS_Cluster_Node1
       LaunchTemplate:
         Name: ranveerLaunch
       ScalingConfig:
