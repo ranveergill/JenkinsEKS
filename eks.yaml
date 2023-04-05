@@ -16,7 +16,7 @@ Resources:
         EndpointPrivateAccess: false
         PublicAccessCidrs:
           - 0.0.0.0/0
-   Nodegroup:
+  Nodegroup:
     Type: AWS::EKS::Nodegroup
     Properties:
       ClusterName: ranveerEKS
