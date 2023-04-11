@@ -22,13 +22,14 @@ Resources:
     Properties:
       ClusterName: ranveerCluster
       NodegroupName: ranveerNodegroup
-      NodeRole: arn:aws:iam::388328004932:role/EKS_Cluster_Node1
-      LaunchTemplate:
-        Name: ranveerLaunch
+      InstanceTypes:
+        - t2.micro
+      DiskSize: 8
+      NodeRole: arn:aws:iam::388328004932:role/eks-node-group
       ScalingConfig:
-        MinSize: 1
-        DesiredSize: 2
-        MaxSize: 3
+        MinSize: 2
+        DesiredSize: 3
+        MaxSize: 4
       Subnets:
-        - subnet-0a31af885cfd8721d
-        - subnet-01b356a04735bdf93
+        - subnet-0d43564d38acc22e5
+        - subnet-0b7a5cbdc6acb38dc
