@@ -1,21 +1,17 @@
 ---
 Resources:
-  EKSCluster:
+  Cluster:
     Type: AWS::EKS::Cluster
     Properties:
       Name: ranveerCluster
-      Version: "1.25"
       RoleArn: arn:aws:iam::388328004932:role/AWSEKSRole
+      Version: "1.25"
       ResourcesVpcConfig:
         SecurityGroupIds:
-          - sg-0d8315f2e7a43714e
+          - sg-06b9c2f393d81edfb
         SubnetIds:
-          - subnet-0a31af885cfd8721d
-          - subnet-01b356a04735bdf93
-        EndpointPublicAccess: true
-        EndpointPrivateAccess: false
-        PublicAccessCidrs:
-          - 0.0.0.0/0
+          - subnet-0d43564d38acc22e5
+          - subnet-0b7a5cbdc6acb38dc
   Nodegroup:
     Type: AWS::EKS::Nodegroup
     DependsOn: Cluster
